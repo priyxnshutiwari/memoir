@@ -4,49 +4,48 @@ import java.util.Scanner;
 
 public class calculator {
     public static void main(String[] args) {
-        Scanner input=new Scanner(System.in);//This calls in inputs from the computer
+        Scanner sc = new Scanner(System.in);
 
-        int fnum,snum,ans;
-        char sign;  //THIS ASSIGNS THE CHARACTER VARIABLE + - * /
+        // taking input from the user using the Scanner
+        // class
+        System.out.print(
+                "Enter the first and the Second number - ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
 
-        // My First Introduction word in the program
-        System.out.println("Welcome User,This is a Simple Calculator Created by Victor Using the if statement");
-
-        System.out.print("Please Enter your first digit: ");
-
-        fnum=input.nextInt(); /*This receive input from user
-		it receive the first number*/
-
-        System.out.print("Enter the second digit: ");
-        snum=input.nextInt();
-		/*This receive input from user
-		it receive the second number*/
-
-        System.out.print("Enter the mathematical operator to be used: "); //Ask the user to input the mathematical operator to be used
-        sign=input.next().charAt(0); //Receive input from user
-        if (sign == '+' )/*making use of if statement to determine the addition sign*/{
-            ans=fnum + snum;
-            System.out.println(fnum +" "+sign +" "+snum +"= "+" "+ ans );
+        // selecting the operand for the calculations
+        System.out.print(
+                "Choose and Enter the type of operation you want to perform (+, -, *, /, %) - ");
+        char op = sc.next().charAt(0);
+        solve(a, b, op);
+    }
+    public static int solve(int a, int b, char op)
+    {
+        int ans = 0;
+        // addition
+        if (op == '+') {
+            ans = a + b;
+            // subtraction
         }
-        else if(sign == '-')/* else if statement for minus sign*/
-        {
-            ans=fnum-snum;
-            System.out.println(fnum +" "+sign +" "+snum +"= "+" "+ ans );
+        else if (op == '-') {
+            ans = a - b;
+            // multiplication
         }
-        else if(sign == '/'){
-            ans=fnum/snum;
-            System.out.println(fnum +" "+sign +" "+snum +"= "+" "+ ans );
+        else if (op == '*') {
+            ans = a * b;
+            // modulo
         }
-        else if(sign == '*'){
-            ans=fnum*snum;
-            System.out.println(fnum +" "+sign +" "+snum +"= "+" "+ ans );
+        else if (op == '%') {
+            ans = a % b;
+            // division
         }
-        else
+        else if (op == '/') {
+            ans = a / b;
+        }
 
-            System.out.println("Your Input is not correct,please check it for any error(s).");
-
-
-
+        // printing the final result
+        System.out.println("Your answer is - " + ans);
+        return ans;
     }
 
 }
