@@ -1,6 +1,6 @@
 package com.assignment;
 
-public class armstrong {
+public class palindrome {
     public static void main(String[] args) {
 
         String str = "level";
