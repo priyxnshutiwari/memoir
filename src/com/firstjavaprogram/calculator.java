@@ -1,4 +1,4 @@
-package com.assignment;
+package com.firstjavaprogram;
 
 import java.util.Scanner;
 
@@ -19,27 +19,23 @@ public class calculator {
         char op = sc.next().charAt(0);
         solve(a, b, op);
     }
-    public static int solve(int a, int b, char op)
-    {
+
+    public static int solve(int a, int b, char op) {
         int ans = 0;
         // addition
         if (op == '+') {
             ans = a + b;
             // subtraction
-        }
-        else if (op == '-') {
+        } else if (op == '-') {
             ans = a - b;
             // multiplication
-        }
-        else if (op == '*') {
+        } else if (op == '*') {
             ans = a * b;
             // modulo
-        }
-        else if (op == '%') {
+        } else if (op == '%') {
             ans = a % b;
             // division
-        }
-        else if (op == '/') {
+        } else if (op == '/') {
             ans = a / b;
         }
 
@@ -47,5 +43,4 @@ public class calculator {
         System.out.println("Your answer is - " + ans);
         return ans;
     }
-
 }
