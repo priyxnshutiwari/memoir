@@ -49,5 +49,5 @@ Provide feedback or suggestions
 Point out areas where I can improve
 Share resources that could help me along the way
 Contact
-Got advice or want to connect? Reach out to me via [email : artisanpriyanshu@gmail.com] or [x : priyxnshutiwari].
+Got advice or want to connect? Reach out to me via [email : artisanpriyanshu@gmail.com] or [x : https://x.com/priyxnshutiwari].
 
