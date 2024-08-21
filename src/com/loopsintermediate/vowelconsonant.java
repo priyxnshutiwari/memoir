@@ -23,6 +23,6 @@ public class vowelconsonant {
             }
         }
         System.out.println("number of vowels : " + vowels);
-        System.out.println("number of vowels : " + consonants);
+        System.out.println("number of consonant : " + consonants);
     }
 }
