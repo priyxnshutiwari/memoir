@@ -13,7 +13,7 @@ public class Ceiling {
         // Output the result (index of the smallest number >= target)
         System.out.println(ans);
 
-        //floor is the greatest number <= target
+        //ceiling is the smallest number >= target
     }
 
     /**
