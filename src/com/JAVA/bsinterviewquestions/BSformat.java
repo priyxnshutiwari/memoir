@@ -7,6 +7,7 @@ public class BSformat {
             int[] arr = {-18, -12, -4, 0, 2, 3, 4, 15, 16, 18, 22, 45, 89};
 
             // Define the target value we are searching for
+
             int target = 22;
 
             // Call the binarySearch method with the array and target value, store the result in 'ans'
