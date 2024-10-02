@@ -11,56 +11,56 @@ public class firstandlast {
 
     // Make the searchRange method static so it can be called from main
     public static int[] searchRange(int[] nums, int target) {
-        // Initialize the result array with {-1, -1} to indicate "not found"
-        int[] ans = {-1, -1};
+        int[] ans = {-1,-1};
+        //check for first occurrence if target first
+        int start = search(nums,target, true);
+        int end = search(nums,target,false);
 
-        // Find the first occurrence of the target
-        ans[0] = search(nums, target, true);
+        ans[0]=start;
+        ans[1]=end;
 
-        // If the first occurrence is found, find the last occurrence
-        if (ans[0] != -1) {
-            ans[1] = search(nums, target, false);
-        }
-
-        // Return the array with first and last positions (or {-1, -1} if not found)
         return ans;
     }
 
-    // Make search method static so it can be called within searchRange
+    // Make search method static, so it can be called within searchRange
     public static int search(int[] nums, int target, boolean findStartIndex) {
-        int ans = -1; // Initialize the answer to -1, meaning target not found
-        int start = 0; // Start of the search range
-        int end = nums.length - 1; // End of the search range
+        int ans = -1;
+        // Initialize the starting point of the search range (first index of the array)
+        int start = 0;
 
-        // Perform binary search
-        while (start <= end) {
-            // Calculate the middle index to avoid overflow (safer than (start + end) / 2)
+        // Initialize the ending point of the search range (last index of the array)
+        int end = nums.length - 1;
+
+        // Continue searching as long as start is less than or equal to end
+        while(start <= end) {
+            // Find the middle index to compare with the target
+            // Avoid overflow by using the formula (start + (end - start) / 2) instead of (start + end) / 2
             int mid = start + (end - start) / 2;
 
-            // If the target is smaller than the middle element, search in the left half
+            // Check if the target is less than the middle element
             if (target < nums[mid]) {
+                // If target is smaller, discard the right half by updating the end index
                 end = mid - 1;
             }
-            // If the target is larger than the middle element, search in the right half
+            // Check if the target is greater than the middle element
             else if (target > nums[mid]) {
+                // If target is larger, discard the left half by updating the start index
                 start = mid + 1;
             }
-            // If the target is equal to the middle element, we found a potential answer
+            // If the middle element is equal to the target
             else {
-                ans = mid; // Store the current index as a potential answer
-
-                // If we are looking for the first occurrence, search on the left side of 'mid'
-                if (findStartIndex) {
-                    end = mid - 1;
+                // potential ans is found
+                ans = mid;
+                if (findStartIndex == true) {
+                    end = mid -1 ;
                 }
-                // If we are looking for the last occurrence, search on the right side of 'mid'
                 else {
                     start = mid + 1;
                 }
             }
         }
 
-        // Return the index of the target (or -1 if not found)
+        // If the loop finishes and the target is not found, return -1
         return ans;
     }
 }
