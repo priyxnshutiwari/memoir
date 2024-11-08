@@ -1,22 +1,21 @@
 package com.JAVA.firstjavaprogram;
 
 import java.util.Scanner;
-
+//program displays the nth fibonacci number
 public class Fibonacci {
     public static void main(String[] args) {
-        int term,a=0,b=1,c;
+       Scanner sc = new Scanner(System.in);
+       int n = sc.nextInt();
+       int a = 0;
+       int b = 1;
+       int count = 2; //we already have our first two nos so our count can start from 2
 
-        System.out.println("enter term");
-
-        Scanner r = new Scanner(System.in);
-        term=r.nextInt();
-
-        for(int i=1;i<=term;i++) //i=1 2 3..
-        {
-            System.out.println(a); //a=0 1 1 2 3 5...
-            c=a+b; //c=1 2 3 5...
-            a=b;   //a=1 1 2 3...
-            b=c;   //b=1 2 3 5...
+        while (count<=n) {
+            int temp = b;
+            b = b+a; //b is updated to whatever next number we have added
+            a = temp; //a is updated to b
+            count++;
         }
+        System.out.println(b);
     }
 }
